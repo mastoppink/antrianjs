@@ -1,0 +1,30 @@
+{
+  "name": "antrianjs",
+  "version": "1.0.0",
+  "description": "aplikasi antrian berbahasa indonesia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mastoppink/antrianjs.git"
+  },
+  "keywords": [
+    "antrian"
+  ],
+  "author": "mastoppink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mastoppink/antrianjs/issues"
+  },
+  "homepage": "https://github.com/mastoppink/antrianjs#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-nedb-rest": "^1.1.1",
+    "nedb": "^1.8.0",
+    "pug": "^2.0.0-beta11",
+    "serve-favicon": "^2.4.1",
+    "socket.io": "^1.7.3"
+  }
+}

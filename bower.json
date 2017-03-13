@@ -1,0 +1,28 @@
+{
+  "name": "antrianjs",
+  "description": "aplikasi antrian berbahasa indonesia",
+  "main": "app.js",
+  "authors": [
+    "mastoppink"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "antrian"
+  ],
+  "homepage": "https://github.com/mastoppink/antrianjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "1.6.2",
+    "angular-resource": "1.6.2",
+    "angular": "1.6.2",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "howler.js": "howler#^2.0.3"
+  }
+}
