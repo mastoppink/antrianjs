@@ -1,1 +1,44 @@
-p this is welcome
+.welcome
+	div(class='col-md-6 col-md-offset-3 center')
+		h3 AntrianJS
+		div(class='btn-group' role='group' aria-label='...')
+			button(type="button" class="btn btn-default" ng-click='clickLoket(true)') Loket Antrian
+			button(type='button' class='btn btn-default' ng-click="go('/dispenser')") Dispenser
+			button(type='button' class='btn btn-default' ng-click='clickMonitor(true)') Monitor
+		div(class='col-md-12')
+			div(class='col-md-6 col-md-offset-3')
+				div(class='panel panel-default welcome-form' ng-show='showLoket') 
+					div(class='panel-heading')
+						.panel-title
+							h4 Loket Antrian
+					.panel-body
+						.form-group
+							label(for='jenisantrian') Jenis Antrian
+							select(class='form-control'  id='jenisantrian' ng-model='jenisantrianloket')
+								option Efiling
+								option NPWP
+								option SPT Masa
+						.form-group
+							label(for='nomorloket') Nomor Loket
+							input(class='form-control' type='number' id='nomorloket' ng-model = 'nomorloket')
+						button(class='btn btn-primary' ng-click='goLoket()') Lanjutkan
+
+		div(class='col-md-12')
+			div(class='col-md-6 col-md-offset-3')
+				div(class='panel panel-default welcome-form' ng-show='showMonitor') 
+					div(class='panel-heading')
+						.panel-title
+							h4 Monitor
+					.panel-body
+						.form-group
+							label(for='jenisantrian') Jenis Antrian
+							select(class='form-control'  id='jenisantrianmtr' ng-model='jenisantrianmonitor')
+								option Efiling
+								option NPWP
+								option SPT Masa
+						.form-group
+							label(for='nomorloket')
+								i(class='fa fa-bullhorn')
+							input(type='checkbox' id='apakahBunyi' ng-model='apakahbunyi')
+								
+						button(class='btn btn-primary' ng-click='goMonitor()') Lanjutkan

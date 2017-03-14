@@ -29,11 +29,13 @@ var port = "80";
 app.set('view engine', 'pug');
 app.set('views', './views')
 app.locals.pretty = true;
+app.disable('x-powered-by');
 
 io.on('connection', function(socket){
 	socket.on('sebarkan', function(data){
 		socket.broadcast.emit(data.for, data.content);
-	})
+	});
+	
 });
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))

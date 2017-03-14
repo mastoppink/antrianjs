@@ -1,1 +1,47 @@
-button(ng-click="test()") One Two Three
+.loket
+	div(class='col-md-12 center')
+		h3 AntrianJS
+		div(class='col-md-6 col-centered')
+			div(class='panel panel-default')
+				.panel-heading
+					div(class='panel-title center')
+						h4 Loket - Efiling - 9
+				.panel-body
+					.col-md-12
+						.col-md-4
+							div(class='panel panel-default')
+								.panel-heading
+									div(class='panel-title center')
+									h5 Antrian Selanjutnya
+								.panel-body
+									span(class='nomor-dispenser')
+										p 99999
+
+						.col-md-4
+							div(class='panel panel-default')
+								.panel-heading
+									div(class='panel-title center')
+									h5 Sedang Dilayani
+								.panel-body
+									span(class='nomor-dispenser')
+										p 99999
+						.col-md-4
+							div(class='panel panel-default')
+								.panel-heading
+									div(class='panel-title center')
+									h5 Antrian Terakhir
+								.panel-body
+									span(class='nomor-dispenser')
+										p 99999
+					.col-centered
+						div(class='btn-group' role='group' aria-label='...')
+							button(type='button' class='btn btn-success') Panggil Selanjutnya
+							button(type='button' class='btn btn-primary') Panggil Ulang
+							button(type='button' class='btn btn-danger' ng-click='showCustomPanggil()') Panggil Disesuaikan
+			div(class='col-md-3 col-centered' ng-show='showCustom')
+				.form
+					.form-group
+						label(for='antrianCustomTxt') Nomor Antrian: 
+						input(type='number' class='form-control')
+					button(class='btn btn-default') Panggil
+

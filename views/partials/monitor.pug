@@ -1,1 +1,12 @@
-p {{ testangka }}
+.monitor
+	nav(class='navbar navbar-default')
+		.container-fluid
+			.navbar-header
+				a(class='navbar-brand') KPP PRATAMA JAKARTA SETIABUDI DUA
+	div(class='col-md-12 col-centered')
+		.col-md-8
+			video(id='my-video' class='video-js' controls autoplay preload='auto' data-setup='{}')
+				source(src='assets/video/video.mp4' type='video/mp4')
+				
+	.col-md-12
+		button(ng-click='kecilkan()') kecilkan
