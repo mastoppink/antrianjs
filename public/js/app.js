@@ -1,4 +1,4 @@
-var app = angular.module('AntrianJS', ['ngRoute', 'ngResource']);
+var app = angular.module('AntrianJS', ['ngRoute', 'ngResource', 'vjs.video']);
 
 app.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider){

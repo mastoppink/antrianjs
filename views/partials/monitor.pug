@@ -2,11 +2,49 @@
 	nav(class='navbar navbar-default')
 		.container-fluid
 			.navbar-header
-				a(class='navbar-brand') KPP PRATAMA JAKARTA SETIABUDI DUA
-	div(class='col-md-12 col-centered')
+				a(class='navbar-brand right') AntrianJS
+	div(class='col-md-12')
 		.col-md-8
-			video(id='my-video' class='video-js' controls autoplay preload='auto' data-setup='{}')
-				source(src='assets/video/video.mp4' type='video/mp4')
-				
-	.col-md-12
-		button(ng-click='kecilkan()') kecilkan
+			.thumbnail
+				video(class='video-js' vjs-default-skin controls preload='auto' vjs-video vjs-setup="options" vjs-ratio="16:9")
+					source(src='assets/video/video.mp4' type='video/mp4')
+		.col-md-2
+			table(class='table table-curved table-striped')
+				tr
+					th Loket
+					th Sedang dilayani
+				tr
+					td Loket 1
+					td(class='right font-bigger') 99
+				tr
+					td Loket 2
+					td(class='right font-bigger') 99
+				tr
+					td Loket 3
+					td(class='right font-bigger') 99
+				tr
+					td Loket 4
+					td(class='right font-bigger') 99
+		.col-md-2
+			table(class='table table-curved table-striped')
+				tr
+					th Loket
+					th Sedang dilayani
+				tr
+					td Loket 1
+					td(class='right font-bigger') 99
+				tr
+					td Loket 2
+					td(class='right font-bigger') 99
+				tr
+					td Loket 3
+					td(class='right font-bigger') 99
+				tr
+					td Loket 4
+					td(class='right font-bigger') 99
+
+
+
+	div(class='col-md-12 center')
+		.thumbnail
+			h2 SELAMAT DATANG DI KPP PRATAMA JAKARTA SETIABUDI DUA

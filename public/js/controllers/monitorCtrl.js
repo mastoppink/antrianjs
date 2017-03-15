@@ -1,6 +1,13 @@
 app.controller('monitorCtrl', function($scope, $routeParams, socket){
-	$scope.kecilkan = function(){
-		myPlayer.setVolume(0.5);
+	$scope.option = {
+		loop: true
 	}
 
+	$scope.$on('vjsVideoReady', function(e, data){
+		// data contain : id, player, and controlbar
+		var player = data.player;
+		player.volume(0.6);
+	});
+
+	$scope.test = [{nama: 'muji hartanto'}, {nama: 'muji hartanto'}, {nama: 'muji hartanto'}, {nama: 'muji hartanto'}];
 });

@@ -24,6 +24,7 @@
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
     "howler.js": "howler#^2.0.3",
-    "video.js": "^5.18.4"
+    "video.js": "^5.18.4",
+    "vjs-video": "^0.1.10"
   }
 }

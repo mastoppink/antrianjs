@@ -204,8 +204,3 @@ function data_panggil(nomor, loket, jenis){
     fullPath.unshift(nomorAntrianPath);
     return fullPath;
 }
-
-
-//videojs
-var myPlayer = videojs('my-video');
-myPlayer.setVolume(0.1);
