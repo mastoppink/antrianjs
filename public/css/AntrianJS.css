@@ -92,10 +92,16 @@ body{
 .table-curved tr:last-child td:last-child {
     border-radius: 0 0 6px 0;
 }
+.no-underline:hover{
+	text-decoration: none;
+}
+.table-admin tr th{
+	width: 8.33%;
+}
 
-
-
-
+.table-admin tr td{
+	text-align: center;
+}
 
 
 
