@@ -22,6 +22,7 @@
   "dependencies": {
     "express": "^4.15.2",
     "express-nedb-rest": "^1.1.1",
+    "moment": "^2.18.1",
     "nedb": "^1.8.0",
     "pug": "^2.0.0-beta11",
     "serve-favicon": "^2.4.1",

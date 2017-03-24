@@ -17,7 +17,34 @@ io.on('connection', function(socket){
 	socket.on('sebarkan', function(data){
 		socket.broadcast.emit(data.for, data.content);
 	});
+
+	socket.on('tambahantrian', function(data){
+
+	});
+
+	socket.on('tambahjenis', function(data){
+
+	});
+
+	socket.on('tambahpanggil', function(data){
+
+	});
+
+	socket.on('editsetting', function(data){
+
+	});
+
+	socket.on('hapuspanggil', function(data){
+
+	});
+
+	socket.on('hapusjenis', function(data){
+
+	});
 });
+
+
+
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(express.static(__dirname + '/public'));
@@ -25,7 +52,6 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
-
 app.get('*', routes.index);
 
 http.listen(port, function(){

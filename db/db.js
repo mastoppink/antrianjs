@@ -1,53 +1,97 @@
 var Datastore = require('nedb');
 var database = new Datastore({ filename: './db/database.simbah', autoload: true });
+var moment = require('moment');
+
+var hariIni = moment().format('DD-MM-YYYY');
 
 var db = {
-	tambahAntrian: function(jenis, hasil){
-			
+	tambahAntrian: function(jenis){
+		database.find({tanggal: hariIni, jenis: jenis}, function(err, docs){
+			if(!err){
+				var antrianTerakhir = docs.length;
+				database.insert({_id: hariIni + "-" + jenis+ "-" + (antrianTerakhir + 1), tanggal: hariIni, jenis: jenis, antrian: antrianTerakhir+1}, function(err, inserted){
+					if(err){
+						console.log(err);
+					}
+					//console.log(inserted);
+				});
+			}
+		});
 	},
 	tambahJenis: function(jenis){
-		database.find({_id : 'jenisantrian'}, function(err, docs){
-			if(docs.length ===  0){
-				//console.log('kosong');
-				//console.log(docs);
-				database.insert({_id: 'jenisantrian', nama: [jenis]}, function(err, dataJenis){
-					//console.log('berhasil diinput '+ jenis);
-				});
-			}else{
-				if(docs[0].nama.indexOf(jenis) == -1){
-					//console.log('kosong namanya');
-					database.update({_id: 'jenisantrian'}, {$push: {nama: jenis}}, {}, function(){
-						//console.log('berhasil ditambahkan '+ jenis);
+		database.find({referensi: 'jenisantrian', jenis: jenis}, function(err, docs){
+			if(!err){
+				if(docs.length === 0){
+					database.insert({referensi: 'jenisantrian', jenis: jenis}, function(err, inserted){
+						if(err){
+							console.log('gagal insert');
+						}else{
+							console.log(inserted);
+						}
 					});
-				}else{
-					console.log('sudah ada');
 				}
 			}
 		});
 	},
-	tambahPanggil: function(param){
-
+	tambahPanggil: function(antrian, loket, monitor){
+		database.insert({antrian: antrian, loket: loket, monitor: monitor}, function(err, inserted){
+			if(err){
+				console.log(err);
+			}
+			console.log(inserted);
+		});
 	},
-	lihatAntrian: function(jenis, hasil){
-
+	lihatAntrian: function(jenis, callback){
+		database.find({tanggal: hariIni, jenis: jenis}, function(err, docs){
+			callback(err, docs.length);
+		});
 	},
-	lihatJenis: function(){
-
+	lihatJenis: function(callback){
+		database.find({_id: 'jenisantrian'}, function(err, docs){
+			if(!err){
+				callback(err, docs);	
+			}
+		});
 	},
-	lihatSetting: function(){
-
+	lihatSetting: function(callback){
+		database.find({_id: 'setting'}, function(err, docs){
+			if(!err){
+				callback(err, docs);	
+			}
+		});	
 	},
-	editJenis: function(){
-
+	editSeting: function(judul, icon){
+		database.find({referensi: 'setting'}, function(err, docs){
+			if(!err){
+				if(docs.length === 0){
+					database.insert({referensi: setting, judul: judul, icon: icon}, function(err, inserted){
+						if(err){
+							console.log('gagal input setting');
+						}else{
+							console.log(inserted);
+						}
+					});
+				}else{
+					database.update({referensi: setting}, {$set: { judul: judul, icon: icon}}, {}, function(){
+						console.log('sukses update');
+					});
+				}
+			}
+		});
 	},
-	editSeting: function(){
-
+	hapusPanggil: function(antrian, loket, monitor){
+		database.remove({antrian: antrian, loket: loket, monitor: monitor}, {multi: false}, function(err, removed){
+			if(!err){
+				console.log(removed);
+			}
+		});
 	},
-	hapusPanggil: function(){
-
-	},
-	hapusJenis: function(){
-
+	hapusJenis: function(jenis){
+		database.remove({referensi: 'jenisantrian', jenis: jenis}, {multi: false}, function(err, removed){
+			if(!err){
+				console.log(removed);
+			}
+		});
 	}
 
 }
